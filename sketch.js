@@ -11,6 +11,7 @@ let character
 let enemy
 let troll
 let wingSlime
+let pointer
 
 const characterMatriz = [
   [0, 0],
@@ -123,6 +124,7 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight)
   background = new Background(backgroundImage, 3)
+  pointer = new Pointer()
   character = new Character(characterMatriz, characterImage, 0, 30, 110, 135, 220, 270)
   const enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 27, 52, 52, 104, 104, 10, 200)
   const wingSlime = new Enemy(wingSlimeMatriz, wingSlimeImage, width - 52, 200, 100, 75, 200, 150, 10, 2500)
@@ -146,6 +148,9 @@ function keyPressed() {
 function draw() {
   background.exibs()
   background.move()
+  
+  pointer.exibs()
+  pointer.pointAdd()
   
   character.exibs()
   character.gravityActives()
