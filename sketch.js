@@ -3,15 +3,16 @@ let characterImage
 let enemyImage
 let trollImage
 let wingSlimeImage
+let gameOverImage
 
-let background
-let gameSound
-let jumpSound
 let character
 let enemy
 let troll
 let wingSlime
 let pointer
+let background
+let gameSound
+let jumpSound
 
 const characterMatriz = [
   [0, 0],
@@ -112,13 +113,14 @@ const wingSlimeMatriz = [
 const enemies = []
 
 function preload() {
-  backgroundImage = loadImage('images/background/floresta.png');
-  characterImage = loadImage('images/character/correndo.png');
-  enemyImage = loadImage('images/enemies/gotinha.png');
+  backgroundImage = loadImage('images/background/floresta.png')
+  gameOverImage = loadImage('images/assets/game-over.png')
+  characterImage = loadImage('images/character/correndo.png')
+  enemyImage = loadImage('images/enemies/gotinha.png')
   trollImage = loadImage('images/enemies/troll.png')
   wingSlimeImage = loadImage('images/enemies/gotinha-voadora.png')
-  gameSound = loadSound('songs/trilha_jogo.mp3');
-  jumpSound = loadSound('songs/somPulo.mp3');
+  gameSound = loadSound('songs/trilha_jogo.mp3')
+  jumpSound = loadSound('songs/somPulo.mp3')
 }
 
 function setup() {
@@ -126,7 +128,7 @@ function setup() {
   background = new Background(backgroundImage, 3)
   pointer = new Pointer()
   character = new Character(characterMatriz, characterImage, 0, 30, 110, 135, 220, 270)
-  const enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 27, 52, 52, 104, 104, 10, 200)
+  const enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 30, 52, 52, 104, 104, 10, 200)
   const wingSlime = new Enemy(wingSlimeMatriz, wingSlimeImage, width - 52, 200, 100, 75, 200, 150, 10, 2500)
   const troll = new Enemy(trollMatriz, trollImage, width, 0, 200, 200, 400, 400, 10, 1500)
   
@@ -151,7 +153,7 @@ function draw() {
   
   pointer.exibs()
   pointer.pointAdd()
-  
+
   character.exibs()
   character.gravityActives()
   
@@ -160,7 +162,8 @@ function draw() {
     enemy.move()
 
     if (character.isCollided(enemy)) {
-      //noLoop()
+      image(gameOverImage, width/2 - 200, height/2)
+      noLoop()
     }
   })
 }

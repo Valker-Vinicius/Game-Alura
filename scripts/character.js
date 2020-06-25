@@ -5,11 +5,16 @@ class Character extends Animation {
     this.baseY = height - this.highess - this.variableY
     this.y = this.baseY
     this.jumpsVel = 0
-    this.gravity = 3 
+    this.gravity = 6
+    this.jumpHeight = -50
+    this.jumps = 0
   }
   
   jump() {
-    this.jumpsVel = - 30
+    if(this.jumps < 2) {
+      this.jumpsVel = this.jumpHeight
+      this.jumps++
+    }
   }
   
   gravityActives() {
@@ -17,11 +22,12 @@ class Character extends Animation {
     this.jumpsVel = this.jumpsVel + this.gravity
     if(this.y > this.baseY) {
       this.y = this.baseY
+      this.jumps = 0
     }
   }
 
   isCollided(enemy) {
-    const precision = 0.73
+    const precision = 0.7
     const collide = collideRectRect(
       this.x, 
       this.y, 
