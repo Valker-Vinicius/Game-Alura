@@ -22,6 +22,7 @@ class InitialScreen {
     }
 
     _button() {
+        manageButton.y = height / 7 * 5
         manageButton.draw()
     }
 }
