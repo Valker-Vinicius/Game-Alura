@@ -1,6 +1,6 @@
 class Enemy extends Animation {
-    constructor(matriz, image, x, width, highess, spriteWidth, spriteHeight) {
-        super(matriz, image,  x, width, highess, spriteWidth, spriteHeight)
+    constructor(matriz, image, x, variableY, width, highess, spriteWidth, spriteHeight) {
+        super(matriz, image,  x, variableY, width, highess, spriteWidth, spriteHeight)
         this.vel = 5
     }
 

@@ -1,7 +1,8 @@
 class Character extends Animation {
-  constructor(matriz, image,  x, width, highess, spriteWidth, spriteHeight) {
-    super(matriz, image,  x, width, highess, spriteWidth, spriteHeight);
-    this.baseY = height - this.highess
+  constructor(matriz, image,  x, variableY, width, highess, spriteWidth, spriteHeight) {
+    super(matriz, image,  x, variableY, width, highess, spriteWidth, spriteHeight);
+    this.variableY = variableY
+    this.baseY = height - this.highess - this.variableY
     this.y = this.baseY
     this.jumpsVel = 0
     this.gravity = 3 

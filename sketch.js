@@ -65,8 +65,8 @@ function preload() {
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background = new Background(backgroundImage, 3);
-  character = new Character(characterMatriz, characterImage, 0, 100, 190, 200, 270);
-  enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 52, 52, 104, 104);
+  character = new Character(characterMatriz, characterImage, 0, 30, 100, 190, 200, 270);
+  enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 27, 52, 52, 104, 104);
   frameRate(40);
   gameSound.loop();
 }
