@@ -4,6 +4,13 @@ let enemyImage
 let trollImage
 let wingSlimeImage
 let gameOverImage
+let initialScreenImage
+let initialScreenFont
+
+let game
+let actualScene = 'initialScreen'
+let scenes
+let initialScreen
 
 let character
 let enemy
@@ -13,8 +20,6 @@ let pointer
 let background
 let gameSound
 let jumpSound
-
-let actualEnemy = 0
 
 const characterMatriz = [
   [0, 0],

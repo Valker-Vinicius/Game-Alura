@@ -1,6 +1,8 @@
 function preload() {
-    backgroundImage = loadImage('images/background/floresta.png')
-    gameOverImage = loadImage('images/assets/game-over.png')
+    initialScreenImage = loadImage('images/backgrounds/telaInicial.png')
+    initialScreenFont = loadFont('assets/fonteTelaInicial.otf')
+    backgroundImage = loadImage('images/backgrounds/floresta.png')
+    gameOverImage = loadImage('assets/game-over.png')
     characterImage = loadImage('images/character/correndo.png')
     enemyImage = loadImage('images/enemies/gotinha.png')
     trollImage = loadImage('images/enemies/troll.png')
