@@ -11,6 +11,7 @@ let game
 let actualScene = 'initialScreen'
 let scenes
 let initialScreen
+let manageButton
 
 let character
 let enemy

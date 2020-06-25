@@ -4,6 +4,7 @@ function setup() {
   gameSound.loop()
   game = new Game()
   initialScreen = new InitialScreen()
+  manageButton = new ManageButton('Iniciar', width/2, height/2)
   game.setup()
   scenes = {
     game,
