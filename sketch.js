@@ -97,11 +97,11 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  background = new Background(backgroundImage, 3);
-  character = new Character(characterMatriz, characterImage, 0, 30, 100, 190, 200, 270);
-  enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 27, 52, 52, 104, 104);
-  troll = new Enemy(trollMatriz, trollImage, width, 0, 200, 200, 400, 400)
+  createCanvas(windowWidth, windowHeight)
+  background = new Background(backgroundImage, 3)
+  character = new Character(characterMatriz, characterImage, 0, 30, 100, 190, 200, 270)
+  enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 27, 52, 52, 104, 104, 10, 100)
+  troll = new Enemy(trollMatriz, trollImage, width, 0, 200, 200, 400, 400, 10, 500)
   frameRate(40);
   gameSound.loop();
 }
@@ -122,11 +122,11 @@ function draw() {
   
   troll.exibs()
   troll.move()
-  
+   
   enemy.exibs();
   enemy.move();
 
   if (character.isCollided(enemy)) {
-    noLoop();
+    noLoop()
   }
 }
