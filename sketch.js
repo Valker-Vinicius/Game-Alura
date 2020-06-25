@@ -1,12 +1,14 @@
-let backgroundImage;
-let characterImage;
-let enemyImage;
+let backgroundImage
+let characterImage
+let enemyImage
+let trollImage
 
-let background;
-let gameSound;
-let jumpSound;
-let character;
-let enemy;
+let background
+let gameSound
+let jumpSound
+let character
+let enemy
+let troll
 
 const characterMatriz = [
   [0, 0],
@@ -54,10 +56,42 @@ const enemyMatriz = [
   [312, 626],
 ]
 
+const trollMatriz = [
+  [0,0],
+  [400,0],
+  [800,0],
+  [1200,0],
+  [1600,0],
+  [0,400],
+  [400,400],
+  [800,400],
+  [1200, 400],
+  [1600, 400],
+  [0,800],
+  [400, 800],
+  [800, 800],
+  [1200, 800],
+  [1600, 800],
+  [0, 1200],
+  [400, 1200],
+  [800, 1200],
+  [1200, 1200],
+  [1600, 1200], 
+  [0, 1600],
+  [400, 1600],
+  [800, 1600],
+  [1200, 1600],
+  [1600, 1600],
+  [0, 2000],
+  [400, 2000],
+  [800, 2000],
+]
+
 function preload() {
   backgroundImage = loadImage('images/background/floresta.png');
   characterImage = loadImage('images/character/correndo.png');
   enemyImage = loadImage('images/enemies/gotinha.png');
+  trollImage = loadImage('images/enemies/troll.png')
   gameSound = loadSound('songs/trilha_jogo.mp3');
   jumpSound = loadSound('songs/somPulo.mp3');
 }
@@ -67,6 +101,7 @@ function setup() {
   background = new Background(backgroundImage, 3);
   character = new Character(characterMatriz, characterImage, 0, 30, 100, 190, 200, 270);
   enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 27, 52, 52, 104, 104);
+  troll = new Enemy(trollMatriz, trollImage, width, 0, 200, 200, 400, 400)
   frameRate(40);
   gameSound.loop();
 }
@@ -84,7 +119,10 @@ function draw() {
   
   character.exibs();
   character.gravityActives();
-
+  
+  troll.exibs()
+  troll.move()
+  
   enemy.exibs();
   enemy.move();
 
