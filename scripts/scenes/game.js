@@ -9,6 +9,7 @@ class Game {
         BGDecor = new Background(BGDecorImage, 5)
         foreground = new Background(foregroundImage, 4)
         grass = new Background(grassImage, 4)
+        life = new Life(3, 3)
         pointer = new Pointer()
         character = new Character(characterMatriz, characterImage, 0, 30, 110, 135, 220, 270)
         const enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 30, 52, 52, 104, 104, 10, 300)
@@ -52,6 +53,9 @@ class Game {
    
         grass.exibs()
         grass.move()
+
+        life.draw()
+
         if (visibleEnemy) {
             this.actualEnemy++
             if (this.actualEnemy > 2) {

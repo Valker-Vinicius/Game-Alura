@@ -7,6 +7,7 @@ function preload() {
     grassImage = loadImage('images/backgrounds/Ground.png')
     //backgroundImage = loadImage('images/backgrounds/floresta.png')
     gameOverImage = loadImage('assets/game-over.png')
+    lifeImage = loadImage('assets/coracao.png')
     characterImage = loadImage('images/character/correndo.png')
     enemyImage = loadImage('images/enemies/gotinha.png')
     trollImage = loadImage('images/enemies/troll.png')

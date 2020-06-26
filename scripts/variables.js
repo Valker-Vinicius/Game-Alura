@@ -7,6 +7,7 @@ let enemyImage
 let trollImage
 let wingSlimeImage
 let gameOverImage
+let lifeImage
 let initialScreenImage
 let initialScreenFont
 
@@ -16,15 +17,16 @@ let scenes
 let initialScreen
 let manageButton
 
+let sky
+let grass
+let BGDecor
+let foreground
 let character
 let enemy
 let troll
 let wingSlime
 let pointer
-let sky
-let grass
-let BGDecor
-let foreground
+let life
 let gameSound
 let jumpSound
 
