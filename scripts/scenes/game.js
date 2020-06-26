@@ -1,6 +1,24 @@
 class Game {
     constructor() {
-        this.actualEnemy = 0
+        this.index = 0
+        this.map = [
+            {
+                enemy: 0,
+                vel: 10
+            },
+            {
+                enemy: 1,
+                vel: 30
+            },
+            {
+                enemy: 1,
+                vel: 15
+            },
+            {
+                enemy: 2,
+                vel: 40
+            }
+        ]
 
     }
 
@@ -12,9 +30,9 @@ class Game {
         life = new Life(3, 3)
         pointer = new Pointer()
         character = new Character(characterMatriz, characterImage, 0, 30, 110, 135, 220, 270)
-        const enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 30, 52, 52, 104, 104, 10, 300)
-        const wingSlime = new Enemy(wingSlimeMatriz, wingSlimeImage, width - 52, 200, 100, 75, 200, 150, 10, 300)
-        const troll = new Enemy(trollMatriz, trollImage, width, 0, 200, 200, 400, 400, 15, 300)
+        const enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 30, 52, 52, 104, 104, 10)
+        const wingSlime = new Enemy(wingSlimeMatriz, wingSlimeImage, width - 52, 200, 100, 75, 200, 150, 10)
+        const troll = new Enemy(trollMatriz, trollImage, width, 0, 200, 200, 400, 400, 15)
 
         enemies.push(enemy)
         enemies.push(troll)
@@ -44,10 +62,12 @@ class Game {
         character.exibs()
         character.gravityActives()
              
-
-        const enemy = enemies[this.actualEnemy]
+        const actualLine = this.map[this.index]
+        const enemy = enemies[actualLine.enemy]
         const visibleEnemy = enemy.x < -enemy.width
-
+        
+        enemy.vel = actualLine.vel
+        
         enemy.exibs()
         enemy.move()
    
@@ -57,18 +77,17 @@ class Game {
         life.draw()
 
         if (visibleEnemy) {
-            this.actualEnemy++
-            if (this.actualEnemy > 2) {
-                this.actualEnemy = 0
-            }
-            enemy.vel = parseInt(random(10, 30))
+            this.index++
+            enemy.appear()
+            if (this.index > this.map.length - 1) {
+                this.index = 0
+            }    
         }
 
         if (character.isCollided(enemy)) {
             life.lifeLose()
             character.beInvincible()
             if(life.lifes === 0) {
-                
                 gameSound.stop()
                 image(gameOverImage, width / 2 - 200, height / 2)
                 noLoop()
