@@ -1,0 +1,25 @@
+{
+    "configs": {
+        "maxLife": 3,
+        "initialLife": 3
+    },
+
+    "map": [
+        {
+            "enemy": 0,
+            "vel": 10
+        },
+        {
+            "enemy": 1,
+            "vel": 30
+        },
+        {
+            "enemy": 1,
+            "vel": 15
+        },
+        {
+            "enemy": 2,
+            "vel": 40
+        }
+    ]
+}

@@ -13,9 +13,14 @@ let initialScreenFont
 
 let game
 let actualScene = 'initialScreen'
+
 let scenes
 let initialScreen
+let pointer
+let life
 let manageButton
+let cassette
+
 
 let sky
 let grass
@@ -25,8 +30,6 @@ let character
 let enemy
 let troll
 let wingSlime
-let pointer
-let life
 let gameSound
 let jumpSound
 

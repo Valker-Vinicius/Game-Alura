@@ -1,25 +1,7 @@
 class Game {
     constructor() {
         this.index = 0
-        this.map = [
-            {
-                enemy: 0,
-                vel: 10
-            },
-            {
-                enemy: 1,
-                vel: 30
-            },
-            {
-                enemy: 1,
-                vel: 15
-            },
-            {
-                enemy: 2,
-                vel: 40
-            }
-        ]
-
+        this.map = cassette.map
     }
 
     setup() {
@@ -27,7 +9,7 @@ class Game {
         BGDecor = new Background(BGDecorImage, 5)
         foreground = new Background(foregroundImage, 4)
         grass = new Background(grassImage, 4)
-        life = new Life(3, 3)
+        life = new Life(cassette.configs.maxLife, cassette.configs.initialLife)
         pointer = new Pointer()
         character = new Character(characterMatriz, characterImage, 0, 30, 110, 135, 220, 270)
         const enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 30, 52, 52, 104, 104, 10)
