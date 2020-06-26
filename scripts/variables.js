@@ -1,4 +1,7 @@
-let backgroundImage
+let skyImage
+let grassImage
+let BGDecorImage
+let foregroundImage
 let characterImage
 let enemyImage
 let trollImage
@@ -18,7 +21,10 @@ let enemy
 let troll
 let wingSlime
 let pointer
-let background
+let sky
+let grass
+let BGDecor
+let foreground
 let gameSound
 let jumpSound
 

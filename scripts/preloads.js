@@ -1,7 +1,11 @@
 function preload() {
     initialScreenImage = loadImage('images/backgrounds/telaInicial.png')
     initialScreenFont = loadFont('assets/fonteTelaInicial.otf')
-    backgroundImage = loadImage('images/backgrounds/floresta.png')
+    skyImage = loadImage('images/backgrounds/Sky.png')
+    BGDecorImage = loadImage('images/backgrounds/BG_Decor.png')
+    foregroundImage = loadImage('images/backgrounds/Foreground.png')
+    grassImage = loadImage('images/backgrounds/Ground.png')
+    //backgroundImage = loadImage('images/backgrounds/floresta.png')
     gameOverImage = loadImage('assets/game-over.png')
     characterImage = loadImage('images/character/correndo.png')
     enemyImage = loadImage('images/enemies/gotinha.png')
