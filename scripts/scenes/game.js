@@ -65,9 +65,14 @@ class Game {
         }
 
         if (character.isCollided(enemy)) {
-            image(gameOverImage, width / 2 - 200, height / 2)
-            gameSound.stop()
-            noLoop()
+            life.lifeLose()
+            character.beInvincible()
+            if(life.lifes === 0) {
+                
+                gameSound.stop()
+                image(gameOverImage, width / 2 - 200, height / 2)
+                noLoop()
+            }
         }
     }
 }

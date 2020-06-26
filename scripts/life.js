@@ -16,4 +16,14 @@ class Life {
             image(lifeImage, position + margin, this.y, this.width, this.highess)
         }        
     }
+
+    lifeGain() {
+        if(this.life < this.total) {
+            this.lifes++
+        }
+    }
+
+    lifeLose() {
+        this.lifes--
+    }
 }
