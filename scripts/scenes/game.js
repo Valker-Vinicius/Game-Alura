@@ -13,10 +13,10 @@ class Game {
         pointer = new Pointer()
         life = new Life(cassette.configs.maxLife, cassette.configs.initialLife)
     
-        character = new Character(characterMatriz, characterImage, 0, 30, 110, 135, 220, 270)
-        const enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 30, 52, 52, 104, 104, 10)
-        const wingSlime = new Enemy(wingSlimeMatriz, wingSlimeImage, width - 52, 200, 100, 75, 200, 150, 10)
-        const troll = new Enemy(trollMatriz, trollImage, width, 30, 200, 200, 400, 400, 15)
+        character = new Character(characterMatriz, characterImage, 1, 30, 110, 135, 220, 270)
+        const enemy = new Enemy(enemyMatriz, enemyImage, width, 30, 52, 52, 104, 104, 10)
+        const wingSlime = new Enemy(wingSlimeMatriz, wingSlimeImage, width, 200, 100, 75, 200, 150, 10)
+        const troll = new Enemy(trollMatriz, trollImage, width, 0, 200, 200, 400, 400, 15)
 
         enemies.push(enemy)
         enemies.push(troll)
