@@ -3,6 +3,7 @@ class Life {
         this.total = total
         this.initial = initial
         this.lifes = this.initial
+        
         this.width = 25
         this.highess = 25
         this.initialX = 20
@@ -18,7 +19,7 @@ class Life {
     }
 
     lifeGain() {
-        if(this.life < this.total) {
+        if(this.lifes < this.total) {
             this.lifes++
         }
     }

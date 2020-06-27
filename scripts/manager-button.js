@@ -4,8 +4,8 @@ class ManageButton {
         this.x = x
         this.y = y
         this.button = createButton(this.text)
-        this.button.mousePressed(() => this._sceneSwitch() )
         this.button.addClass('initial-screen-button')
+        this.button.mousePressed(() => this._sceneSwitch() )
     }
 
     draw() {

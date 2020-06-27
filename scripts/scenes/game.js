@@ -9,12 +9,14 @@ class Game {
         BGDecor = new Background(BGDecorImage, 5)
         foreground = new Background(foregroundImage, 4)
         grass = new Background(grassImage, 4)
-        life = new Life(cassette.configs.maxLife, cassette.configs.initialLife)
+        
         pointer = new Pointer()
+        life = new Life(cassette.configs.maxLife, cassette.configs.initialLife)
+    
         character = new Character(characterMatriz, characterImage, 0, 30, 110, 135, 220, 270)
         const enemy = new Enemy(enemyMatriz, enemyImage, width - 52, 30, 52, 52, 104, 104, 10)
         const wingSlime = new Enemy(wingSlimeMatriz, wingSlimeImage, width - 52, 200, 100, 75, 200, 150, 10)
-        const troll = new Enemy(trollMatriz, trollImage, width, 0, 200, 200, 400, 400, 15)
+        const troll = new Enemy(trollMatriz, trollImage, width, 30, 200, 200, 400, 400, 15)
 
         enemies.push(enemy)
         enemies.push(troll)
@@ -22,7 +24,7 @@ class Game {
     }
 
     keyPressed(key) {
-        if (key === 'ArrowUp') {
+        if (key === 'ArrowUp' || key === "w") {
             character.jump()
             jumpSound.play()
         }
@@ -31,13 +33,13 @@ class Game {
     draw() {
         sky.exibs()
         sky.move()
-
         BGDecor.exibs()
         BGDecor.move()
-
         foreground.exibs()
         foreground.move()
 
+        life.draw()
+        
         pointer.exibs()
         pointer.pointAdd()
 
@@ -55,8 +57,6 @@ class Game {
    
         grass.exibs()
         grass.move()
-
-        life.draw()
 
         if (visibleEnemy) {
             this.index++

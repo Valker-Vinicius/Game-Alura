@@ -1,7 +1,5 @@
 class InitialScreen {
-    constructor() {
-
-    }
+    constructor() {}
 
     draw() {
         this._deepImage()
