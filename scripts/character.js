@@ -41,17 +41,16 @@ class Character extends Animation {
       return false
     }
 
-    const precision = 0.9
-
-      const collide = collideCircleCircle(
-      this.x + this.width/2, 
-      this.y + this.highess/2, 
-      this.width * precision, 
-      enemy.x + enemy.width/1.5, 
-      enemy.y + enemy.highess/1.5,
-      enemy.width * precision
-      )
-      console.log(collide)
+    const precision = 0.7
+    
+    const collide = collideCircleCircle(
+    this.x + this.width/2, 
+    this.y + this.highess/2,
+    this.width * precision, 
+    enemy.x + enemy.width/1.5, 
+    enemy.y + enemy.highess/1.5,
+    enemy.width * precision
+    )
     return collide;
   }
 }

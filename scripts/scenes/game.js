@@ -17,7 +17,7 @@ class Game {
         const enemy = new Enemy(enemyMatriz, enemyImage, width, 30, 52, 52, 104, 104, 10)
         const wingSlime = new Enemy(wingSlimeMatriz, wingSlimeImage, width, 200, 100, 75, 200, 150, 10)
         const troll = new Enemy(trollMatriz, trollImage, width, 0, 200, 200, 400, 400, 15)
-
+        
         enemies.push(enemy)
         enemies.push(troll)
         enemies.push(wingSlime)
@@ -65,15 +65,20 @@ class Game {
                 this.index = 0
             }    
         }
-
-        if (character.isCollided(enemy)) {
-            life.lifeLose()
-            character.beInvincible()
-            if(life.lifes === 0) {
-                gameSound.stop()
+        
+        if(life.lifes < 0) {
                 image(gameOverImage, width / 2 - 200, height / 2)
+                gameSound.stop()
                 noLoop()
-            }
+        }
+        
+        if (character.isCollided(enemy)) {
+            character.beInvincible()
+            life.lifeLose()
+            if(life.lifes === 0) {
+                life.lifeLose()
+                console.log(life.lifes)
+            }   
         }
     }
 }

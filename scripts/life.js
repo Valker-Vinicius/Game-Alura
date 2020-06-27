@@ -2,7 +2,7 @@ class Life {
     constructor(total, initial) {
         this.total = total
         this.initial = initial
-        this.lifes = this.initial
+        this.lifes = this.total
         
         this.width = 25
         this.highess = 25
@@ -18,13 +18,14 @@ class Life {
         }        
     }
 
+
     lifeGain() {
         if(this.lifes < this.total) {
             this.lifes++
         }
     }
 
-    lifeLose() {
+    lifeLose() { 
         this.lifes--
     }
 }
