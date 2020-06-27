@@ -2,6 +2,7 @@ class Game {
     constructor() {
         this.index = 0
         this.map = cassette.map
+        this.isDead = false
     }
 
     setup() {
@@ -24,7 +25,7 @@ class Game {
     }
 
     keyPressed(key) {
-        if (key === 'ArrowUp' || key === "w") {
+        if ( this.isDead === false && key === 'ArrowUp' || key === "w") {
             character.jump()
             jumpSound.play()
         }
@@ -69,9 +70,10 @@ class Game {
         if(life.lifes < 0) {
                 image(gameOverImage, width / 2 - 200, height / 2)
                 gameSound.stop()
+                this.isDead = true
                 noLoop()
         }
-        
+
         if (character.isCollided(enemy)) {
             character.beInvincible()
             life.lifeLose()
