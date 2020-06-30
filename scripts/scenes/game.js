@@ -24,10 +24,10 @@ class Game {
         enemies.push(wingSlime)
     }
 
-    keyPressed(key) {
-        if ( this.isDead === false && key === 'ArrowUp' || key === "w") {
-            character.jump()
-            jumpSound.play()
+    keyPressed(key){
+        if ( this.isDead === false && key === 'ArrowUp' || this.isDead === false && key === "w") {
+        character.jump()
+        jumpSound.play()
         }
     }
 
@@ -68,10 +68,10 @@ class Game {
         }
         
         if(life.lifes < 0) {
-                image(gameOverImage, width / 2 - 200, height / 2)
-                gameSound.stop()
-                this.isDead = true
-                noLoop()
+            image(gameOverImage, width / 2 - 200, height / 2)
+            gameSound.stop()
+            this.isDead = true
+            noLoop()
         }
 
         if (character.isCollided(enemy)) {
@@ -79,7 +79,6 @@ class Game {
             life.lifeLose()
             if(life.lifes === 0) {
                 life.lifeLose()
-                console.log(life.lifes)
             }   
         }
     }
