@@ -10,5 +10,5 @@
 - ✅ Improved collision
 - ✅ Songs bugs fixed up
 - ✅ Lifes bug fixed up
-## Certificate
+## [Certificate](https://editor.p5js.org/Valker-Vinicius/full/hJlWhETzH)
 ![Certificate Image](https://user-images.githubusercontent.com/65914461/86071790-859f8800-ba56-11ea-8169-94606643597d.png)
